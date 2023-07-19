@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My App</title>
+  <title>testing</title>
   <base href="/">
   
 </head>
 <body>
-    <h1>Enter new password</h1>
-    <div class="container">
+  <div class="password">
+    <h1 class="password-header">Enter new password</h1>
+    <div class="password-form">
+    <div class="password-form--form">
       <input type="password" [(ngModel)]="password" (ngModelChange)="updateStrength()">
       <div class="strength-section" *ngFor="let sectionColor of strengthSections" [style.background-color]="sectionColor"></div>
     </div>
+  </div>
+</div>
   
 </body>
 </html>
