@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+
+
+div.strength-section {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  div.strength-section.gray {
+    background-color: gray;
+  }
+  
+  div.strength-section.red {
+    background-color: red;
+  }
+  
+  div.strength-section.yellow {
+    background-color: yellow;
+  }
+  
+  div.strength-section.green {
+    background-color: green;
+  }
+  
