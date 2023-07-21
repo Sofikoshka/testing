@@ -41,8 +41,8 @@ export class PasswordInputComponent implements ControlValueAccessor {
 
   updateStrength() {
     this.passwordStrength = this.passwordStrengthService.getStrength(this.password);
-    this.onChange(this.password); // Notify the parent component about the password change
-    this.onTouched(); // Notify that the input has been touched
+    this.onChange(this.password); 
+    this.onTouched(); 
   }
 
   setDisabledState(isDisabled: boolean): void {}
