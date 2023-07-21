@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>testing</title>
-  <base href="/">
-  
-</head>
-<body>
-  <div class="password">
-    <h1 class="password-header">Enter new password</h1>
-    <div class="password-form">
-    <div class="password-form--form">
-      <input type="password" [(ngModel)]="password" (ngModelChange)="updateStrength()">
-      <div class="strength-section" *ngFor="let sectionColor of strengthSections" [style.background-color]="sectionColor"></div>
-    </div>
+<div>
+    <app-password-input [(password)]="password" [passwordStrength]="passwordStrength"></app-password-input>
   </div>
-</div>
   
-</body>
-</html>
-
+  
