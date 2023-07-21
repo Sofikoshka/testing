@@ -40,10 +40,13 @@ export class PasswordInputComponent implements ControlValueAccessor {
   }
 
   updateStrength() {
-    this.passwordStrength = this.passwordStrengthService.getStrength(this.password);
-    this.onChange(this.password); 
-    this.onTouched(); 
+    if (this.password.trim().length === 0) {
+      this.passwordStrength = ['gray', 'gray', 'gray'];
+    } else {
+      this.passwordStrength = this.passwordStrengthService.getStrength(this.password);
+    }
   }
+  
 
   setDisabledState(isDisabled: boolean): void {}
 }
