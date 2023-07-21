@@ -4,7 +4,7 @@ import { PasswordStrengthService } from './password-strength.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './password-input.component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./password-input.component.scss']
 })
 export class AppComponent {

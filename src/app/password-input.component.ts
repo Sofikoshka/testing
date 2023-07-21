@@ -17,7 +17,7 @@ import { PasswordStrengthService } from './password-strength.service';
 export class PasswordInputComponent implements ControlValueAccessor {
   @Input() password: string = '';
   @Output() passwordChange = new EventEmitter<string>();
-  passwordStrength: string[] = Array(3).fill('gray');
+  @Input() passwordStrength: string[] = Array(3).fill('gray');
 
   constructor(private passwordStrengthService: PasswordStrengthService) {}
 
