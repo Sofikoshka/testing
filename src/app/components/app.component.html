@@ -1,0 +1,7 @@
+<div>
+  <app-password-input
+    [(ngModel)]="password"
+    [passwordStrength]="passwordStrength"
+    (ngModelChange)="password = $event"
+  ></app-password-input>
+</div>

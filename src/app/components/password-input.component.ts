@@ -1,6 +1,12 @@
-import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  forwardRef,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { PasswordStrengthService } from './password-strength.service';
+import { PasswordStrengthService } from '../services/password-strength.service';
 
 @Component({
   selector: 'app-password-input',
@@ -10,9 +16,9 @@ import { PasswordStrengthService } from './password-strength.service';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => PasswordInputComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class PasswordInputComponent implements ControlValueAccessor {
   @Input() password: string = '';
@@ -41,12 +47,15 @@ export class PasswordInputComponent implements ControlValueAccessor {
 
   updateStrength() {
     if (this.password.trim().length === 0) {
-      this.passwordStrength = ['gray', 'gray', 'gray'];
+      this.passwordStrength = Array(3).fill('gray');
     } else {
-      this.passwordStrength = this.passwordStrengthService.getStrength(this.password);
+      this.passwordStrength = this.passwordStrengthService.getStrength(
+        this.password
+      );
     }
+    this.onChange(this.password);
+    this.onTouched();
   }
-  
 
   setDisabledState(isDisabled: boolean): void {}
 }
